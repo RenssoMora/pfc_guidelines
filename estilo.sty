@@ -1,0 +1,147 @@
+% ============================================================
+%  estilo.sty
+%  Paquete de estilo para la "Guia general para la redaccion
+%  de una tesis de Ciencias de la Computacion" (formato ensayo).
+% ============================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{estilo}[2026/09/21 estilo para guia de tesis]
+
+% ------------------------------------------------------------
+% 1. Geometria y tipografia base
+% ------------------------------------------------------------
+\RequirePackage[a4paper,margin=2.7cm]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage{microtype}
+\RequirePackage{setspace}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{csquotes}
+\onehalfspacing
+
+% ------------------------------------------------------------
+% 2. Graficos, tablas y color
+% ------------------------------------------------------------
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, fit, backgrounds}
+\RequirePackage{colortbl}
+\RequirePackage{xcolor}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{graphicx}
+\RequirePackage{caption}
+
+% ------------------------------------------------------------
+% 3. Esquema de colores (paleta suministrada)
+% ------------------------------------------------------------
+\definecolor{lightblue}{rgb}{0.68, 0.85, 0.9}
+\definecolor{blue}{rgb}{0.33, 0.61, 0.92}
+\definecolor{green}{rgb}{0.46, 0.93, 0.46}
+\definecolor{red}{rgb}{1.0, 0.61, 0.66}
+\definecolor{orange}{rgb}{1.0, 0.85, 0.73}
+\definecolor{purple}{rgb}{0.87, 0.63, 0.87}
+\definecolor{gold}{rgb}{1.0, 0.94, 0.0}
+\definecolor{brown}{rgb}{0.72, 0.53, 0.4}
+
+% Tonos derivados de la misma paleta, oscurecidos para que el
+% texto (titulos, bordes de recuadros) mantenga contraste
+% legible sobre fondo blanco.
+\colorlet{tituloColor}{blue!65!black}
+\colorlet{bordeNota}{blue!55!black}
+\colorlet{bordeDef}{purple!60!black}
+\colorlet{bordeAlerta}{red!55!black}
+\colorlet{bordeEjemplo}{brown!70!black}
+\colorlet{bordeBuenaPractica}{green!45!black}
+
+\newcommand{\rojo}[1]{\textcolor{red!70!black}{#1}}
+
+% ------------------------------------------------------------
+% 4. Hipervinculos
+% ------------------------------------------------------------
+\RequirePackage[
+  colorlinks=true,
+  linkcolor=tituloColor,
+  citecolor=tituloColor,
+  urlcolor=tituloColor
+]{hyperref}
+\RequirePackage{cleveref}
+
+% ------------------------------------------------------------
+% 5. Titulos ligeramente mas grandes que lo habitual,
+%    coloreados con la paleta del proyecto.
+% ------------------------------------------------------------
+\RequirePackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\LARGE\bfseries\color{tituloColor}}
+  {\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{2.4ex plus 1ex minus .2ex}{1.6ex plus .2ex}
+
+\titleformat{\subsection}
+  {\normalfont\Large\bfseries\color{tituloColor}}
+  {\thesubsection}{0.8em}{}
+\titlespacing*{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1.2ex plus .2ex}
+
+\titleformat{\subsubsection}
+  {\normalfont\large\bfseries\itshape\color{tituloColor}}
+  {\thesubsubsection}{0.8em}{}
+\titlespacing*{\subsubsection}{0pt}{1.6ex plus 1ex minus .2ex}{1ex plus .2ex}
+
+% ------------------------------------------------------------
+% 6. Recuadros tematicos (uso moderado, solo cuando aporta)
+% ------------------------------------------------------------
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{cajaNota}[1][]{%
+  enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
+  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  title={Nota metodologica#1}
+}
+
+\newtcolorbox{cajaDefinicion}[1][]{%
+  enhanced, breakable, colback=purple!12, colframe=bordeDef,
+  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  title={Definicion#1}
+}
+
+\newtcolorbox{cajaAlerta}[1][]{%
+  enhanced, breakable, colback=red!18, colframe=bordeAlerta,
+  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  title={Error frecuente#1}
+}
+
+\newtcolorbox{cajaEjemplo}[1][]{%
+  enhanced, breakable, colback=orange!30, colframe=bordeEjemplo,
+  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  title={Ejemplo#1}
+}
+
+\newtcolorbox{cajaBuenaPractica}[1][]{%
+  enhanced, breakable, colback=green!20, colframe=bordeBuenaPractica,
+  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  title={Buena practica#1}
+}
+
+% Resaltado inline de conceptos clave
+\newcommand{\clave}[1]{\colorbox{gold!55}{\textcolor{black}{\textbf{#1}}}}
+
+% ------------------------------------------------------------
+% 7. Bibliografia (autor-año, apta para libros y articulos)
+% ------------------------------------------------------------
+\RequirePackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  maxcitenames=2,
+  giveninits=true,
+  natbib=true
+]{biblatex}
+
+% ------------------------------------------------------------
+% 8. Listas mas compactas para el formato ensayo
+% ------------------------------------------------------------
+\RequirePackage{enumitem}
+\setlist{itemsep=2pt, topsep=4pt}
+
+\endinput

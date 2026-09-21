@@ -1,0 +1,452 @@
+\documentclass[11pt]{article}
+\usepackage{estilo}
+\addbibresource{referencias.bib}
+
+\title{\LARGE\bfseries\color{tituloColor} Guia general para la redaccion de una tesis\\ en Ciencias de la Computacion}
+\author{Plantilla conceptual --- no ligada a una nomenclatura fija de capitulos}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Este documento no es una tesis: es un \emph{molde argumentativo}, un ensayo que
+explica que debe \textbf{existir} dentro de una tesis de Ciencias de la
+Computacion para que esta sea correcta, autocontenida y defendible, con
+independencia de los nombres que finalmente reciban sus capitulos. La tesis se
+entiende aqui como lo describen \citet{booth2016craft}: una respuesta
+justificada a una pregunta que le importa a una comunidad. Sobre esa base se
+identifican cuatro funciones que todo trabajo de investigacion en computacion
+debe satisfacer --- situar el problema, sostenerse a si mismo con la teoria
+necesaria, distinguirse de lo ya hecho, y ofrecer una contribucion con
+evidencia de que funciona --- y se cierra con la sintesis final. El objetivo
+no es imponer una estructura rigida sino asegurar que, sin importar como se
+titulen las secciones, la \emph{esencia} de cada funcion este presente.
+\end{abstract}
+
+\tableofcontents
+
+% ============================================================
+\section{Como leer y usar este molde}
+% ============================================================
+
+Una tesis de computacion no se organiza por convencion sino porque cada parte
+cumple un rol argumentativo especifico. \citet{zobel2014writing} insiste en
+que escribir en computacion es, ante todo, \emph{construir un argumento
+verificable}: cada afirmacion debe apoyarse en evidencia, ya sea una
+demostracion, un experimento o una referencia. Este documento traduce esa
+idea en cuatro bloques funcionales que pueden llamarse de muchas maneras
+(``Capitulo 1'', ``Introduccion'', ``Marco teorico'', ``Estado del arte'',
+``Metodologia'', ``Resultados'', etc.) pero cuya \textbf{funcion} no es
+negociable.
+
+\begin{cajaNota}
+Este documento esta escrito como ensayo argumentativo, no como tabla de
+contenidos vacia. Cada bloque se explica indicando (i) que problema
+resuelve dentro de la arquitectura global de la tesis, (ii) que elementos
+minimos debe contener, (iii) por que la literatura metodologica exige esos
+elementos, y (iv) cuando un elemento es opcional u obligatorio segun el tipo
+de contribucion (algoritmo, modelo formal, sistema, estudio empirico).
+\end{cajaNota}
+
+La \cref{fig:pipeline} resume el flujo. Notese que las flechas no son solo de
+avance: una tesis madura revisa constantemente sus primeros bloques a la luz
+de lo que descubre en los ultimos, un proceso iterativo de refinamiento que
+\citet{booth2016craft} describen como caracteristico de toda investigacion
+seria, y que en la figura se representa mediante la flecha punteada de
+retroalimentacion.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  node distance=1.1cm and 1.3cm,
+  every node/.style={font=\small},
+  bloque/.style={
+    rectangle, rounded corners, draw=tituloColor, thick,
+    minimum width=3.1cm, minimum height=1.5cm, align=center,
+    text width=3.1cm
+  }
+]
+  \node[bloque, fill=lightblue!70] (intro) {(a) Introduccion:\\ contexto, problema, objetivos};
+  \node[bloque, fill=purple!25, right=of intro] (teoria) {(b) Fundamentos y estado del arte};
+  \node[bloque, fill=orange!55, right=of teoria] (contrib) {(c) Contribucion y evidencia};
+  \node[bloque, fill=green!35, right=of contrib] (concl) {(d) Conclusion};
+
+  \draw[-{Latex[length=2.5mm]}, thick] (intro) -- (teoria);
+  \draw[-{Latex[length=2.5mm]}, thick] (teoria) -- (contrib);
+  \draw[-{Latex[length=2.5mm]}, thick] (contrib) -- (concl);
+
+  \draw[-{Latex[length=2.5mm]}, thick, dashed, bordeAlerta]
+    (contrib.south) .. controls +(0,-1.4) and +(0,-1.4) .. (intro.south)
+    node[midway, below, yshift=-1.1cm, text width=6.5cm, align=center, font=\scriptsize\itshape]
+    {iteracion: los resultados obligan a refinar el problema u objetivos};
+
+  \begin{scope}[on background layer]
+    \node[fit=(teoria)(contrib), fill=blue!8, rounded corners, inner sep=6pt,
+          label={[font=\tiny, text=tituloColor]above:nucleo autocontenido de la contribucion}] {};
+  \end{scope}
+\end{tikzpicture}%
+}
+\caption{Flujo funcional de una tesis de Ciencias de la Computacion. Los
+nombres de los capitulos pueden variar; las funciones (a)--(d) no.}
+\label{fig:pipeline}
+\end{figure}
+
+% ============================================================
+\section{Bloque (a): Introduccion --- situar el problema}
+% ============================================================
+
+La primera funcion de la tesis es \textbf{situar al lector}: por que este
+problema importa, que se sabe y que no, y que se propone hacer al respecto.
+\citet{creswell2018research} formaliza este bloque como la articulacion de
+cuatro componentes que rara vez faltan en un proyecto de investigacion serio:
+el planteamiento del problema, la revision preliminar de literatura que
+motiva ese planteamiento, el proposito del estudio y las preguntas o
+hipotesis que lo operacionalizan. Ninguno de estos componentes exige un
+nombre de seccion especifico, pero los cuatro deben poder señalarse con el
+dedo en algun lugar del documento.
+
+\subsection{Contextualizacion y planteamiento del problema}
+
+Debe explicarse el dominio de aplicacion o el area teorica, y dentro de ese
+dominio, delimitar con precision el problema. \citet[cap.~2]{booth2016craft}
+recomienda formular el problema como una tension no resuelta: algo que
+\emph{deberia} poder hacerse (o entenderse, o demostrarse) y que actualmente
+no se puede, no se sabe hacer bien, o no se sabe hacer de forma eficiente,
+correcta o segura. Esta tension es lo que en la jerga de investigacion se
+llama la \textbf{brecha} (\emph{gap}); situarla aqui evita que aparezca
+recien en el capitulo de estado del arte, donde ya seria tardio.
+
+\subsection{Objetivos, preguntas de investigacion e hipotesis}
+
+Todo objetivo debe ser verificable por el propio diseño de la contribucion
+que se presentara mas adelante: si el objetivo es ``diseñar un algoritmo mas
+eficiente'', el bloque de evidencia debera demostrar esa eficiencia; si es
+``demostrar una propiedad formal'', debera existir una prueba. Segun el tipo
+de investigacion, esta seccion puede articularse como:
+
+\begin{itemize}
+  \item \textbf{Objetivo general y objetivos especificos}, tipico en trabajos
+  de diseño o construccion de sistemas y algoritmos.
+  \item \textbf{Preguntas de investigacion} (\emph{research questions}),
+  frecuentes en estudios empiricos de ingenieria de software, siguiendo el
+  patron de formulacion que describen \citet{wohlin2012experimentation}.
+  \item \textbf{Hipotesis formales}, cuando el trabajo es de naturaleza
+  cuantitativa o experimental y se someteran a prueba estadistica.
+\end{itemize}
+
+\begin{cajaAlerta}
+Un objetivo que no puede fallar no es un objetivo cientifico. Si no existe
+ninguna evidencia posible que pudiera mostrar que la contribucion \emph{no}
+funciona, el objetivo esta mal planteado. Esta es una de las advertencias
+mas repetidas por \citet{zobel2014writing}: la investigacion en computacion
+debe ser \rojo{falsable o refutable en la practica}, no solo plausible en el
+discurso.
+\end{cajaAlerta}
+
+\subsection{Alcance, supuestos y aporte esperado}
+
+Cerrando el bloque, conviene anticipar brevemente en que consiste la
+contribucion (sin desarrollarla aun) y cuales son sus limites deliberados:
+que se asume, que queda fuera del alcance y por que. Esto no sustituye a la
+conclusion; es una promesa que el resto de la tesis debe cumplir.
+
+% ============================================================
+\section{Bloque (b): Fundamentos necesarios y justificacion frente al estado del arte}
+% ============================================================
+
+Esta es la parte que garantiza que la tesis sea \textbf{autocontenida}: un
+lector competente en computacion, pero no necesariamente experto en el
+subtema, debe poder entender la contribucion sin salir del documento. Al
+mismo tiempo, debe quedar claro por que la contribucion es necesaria frente
+a lo que ya existe. Aunque en muchos programas estas dos tareas se separan en
+capitulos distintos (``Marco teorico'' y ``Estado del arte''), conceptualmente
+responden a una misma pregunta: \emph{?qué necesito saber para entender por
+que mi contribucion es nueva y valida?}
+
+\subsection{Fundamentos teoricos (autocontencion)}
+
+Aqui se introduce el aparato conceptual minimo e imprescindible: definiciones
+formales, notacion, modelos computacionales, estructuras de datos,
+resultados previos que se usaran como caja negra, o el marco estadistico
+necesario para interpretar los experimentos. \citet{denning1989computing}
+argumentan que la disciplina de la computacion se sostiene sobre tres
+paradigmas --- teoria, abstraccion (modelado) y diseño --- y que toda
+contribucion puede describirse en terminos de al menos uno de ellos; esta
+seccion debe dar al lector las herramientas del paradigma que corresponda a
+la tesis.
+
+\begin{cajaDefinicion}[: nivel de autocontencion exigible]
+Una tesis es autocontenida cuando, tras leer este bloque, el lector puede
+verificar por si mismo cada paso tecnico del bloque de contribucion sin
+recurrir a fuentes externas para los conceptos \emph{centrales}. Puede
+remitirse a fuentes externas para resultados \emph{auxiliares} bien
+conocidos (por ejemplo, un teorema clasico de complejidad), siempre citando
+su origen.
+\end{cajaDefinicion}
+
+Segun la naturaleza de la contribucion, el contenido minimo cambia:
+
+\begin{itemize}
+  \item \textbf{Contribucion algoritmica}: modelo de computo, definiciones de
+  complejidad temporal/espacial, estructuras de datos empleadas.
+  \item \textbf{Contribucion formal (teorema, sistema logico, semantica)}:
+  definiciones, axiomas, lemas previos y convenciones notacionales completas,
+  siguiendo las practicas de claridad que recomienda \citet{lamport1995write}
+  para que cada paso de una demostracion sea verificable.
+  \item \textbf{Contribucion de modelado} (arquitecturas, modelos
+  probabilisticos, modelos de simulacion): supuestos del modelo, variables,
+  y criterios de validez.
+  \item \textbf{Contribucion de sistema/herramienta}: arquitectura general,
+  decisiones de diseño y las tecnologias sobre las que se construye.
+\end{itemize}
+
+\subsection{Estado del arte y justificacion frente a lo existente}
+
+No basta con listar trabajos relacionados: hay que \textbf{compararlos
+criticamente} contra los objetivos planteados en el Bloque (a) para exponer
+la brecha que la tesis llena. \citet{kitchenham2007guidelines} formalizan
+este proceso mediante revisiones sistematicas de literatura, con criterios
+explicitos de busqueda, inclusion y exclusion; aun cuando una tesis no
+requiera una revision sistematica completa, adoptar su disciplina --- fuentes
+trazables, criterios explicitos, cobertura representativa del area --- da
+credibilidad a la afirmacion de novedad. \citet[cap.~2]{kuhn1962structure}
+recuerda ademas que el valor de una contribucion cientifica se mide en
+relacion con el paradigma vigente: una tesis no ataca al vacio, ataca las
+limitaciones concretas de soluciones concretas.
+
+\begin{cajaBuenaPractica}
+Organice la comparacion en una tabla o taxonomia (por ejemplo, por enfoque,
+supuestos, complejidad, o resultados reportados) y ubique explicitamente su
+propia contribucion como una fila o celda adicional de esa misma tabla. Esto
+hace visible la brecha en lugar de solo describirla en prosa.
+\end{cajaBuenaPractica}
+
+\begin{cajaAlerta}
+Evite el ``estado del arte panoramico'': enumerar decenas de trabajos sin
+conectarlos con los objetivos de la tesis. Cada trabajo citado en esta seccion
+debe responder a una de dos preguntas: ?por que no resuelve el problema
+planteado en el Bloque (a)? o ?que herramienta metodologica le presta a esta
+tesis?
+\end{cajaAlerta}
+
+\subsection{La brecha como bisagra}
+
+La brecha (\emph{gap}) identificada aqui debe coincidir exactamente con la
+tension descrita en la Seccion~2.1. Si no coinciden, alguno de los dos
+bloques esta mal planteado. Esta coherencia es, en la practica, el criterio
+mas comun de rechazo en comites de tesis: objetivos que prometen algo que el
+estado del arte revisado no muestra como necesario, o un estado del arte que
+revela una brecha distinta de la que los objetivos atacan.
+
+% ============================================================
+\section{Bloque (c): Presentacion de la contribucion y evidencia}
+% ============================================================
+
+Este es el nucleo original de la tesis: aqui se presenta \emph{que se hizo} y
+se demuestra \emph{que funciona}. La forma que tome depende enteramente del
+tipo de contribucion, pero la exigencia de fondo es constante: toda
+afirmacion de merito debe venir acompañada de evidencia de la clase adecuada
+a esa afirmacion \citep{zobel2014writing}.
+
+\subsection{Presentacion formal de la contribucion}
+
+\begin{itemize}
+  \item \textbf{Algoritmo}: especificacion precisa (pseudocodigo o
+  formalismo equivalente), argumento de correctitud, y analisis de
+  complejidad. Un algoritmo sin analisis de complejidad ni prueba de
+  correctitud es una receta, no una contribucion cientifica.
+  \item \textbf{Teorema o resultado formal}: enunciado preciso, demostracion
+  completa y explicita. \citet{lamport1995write} propone estructurar toda
+  demostracion como una jerarquia de pasos numerados, cada uno lo bastante
+  pequeño para ser verificado de forma mecanica; esta estructura facilita
+  enormemente la revision por el comite.
+  \item \textbf{Modelo o arquitectura}: descripcion formal del modelo,
+  justificacion de cada supuesto, y --- cuando corresponda --- un argumento
+  de por que el modelo captura los aspectos relevantes del fenomeno.
+  \item \textbf{Sistema o artefacto de software}: arquitectura, decisiones de
+  diseño relevantes, y una descripcion suficiente para que el sistema sea
+  reproducible por terceros.
+\end{itemize}
+
+\subsection{Diseño experimental (capitulo condicional)}
+
+\begin{cajaNota}[: condicionalidad de la evaluacion experimental]
+Si la contribucion hace afirmaciones de \emph{desempeño}, \emph{eficiencia
+practica}, \emph{eficacia}, o cualquier propiedad no demostrable de forma
+puramente analitica, entonces un capitulo o seccion de experimentos es
+\textbf{obligatorio}. Si la contribucion es puramente formal y sus
+propiedades quedan completamente establecidas por demostracion (por ejemplo,
+un algoritmo cuya complejidad se deriva analiticamente y cuya correctitud se
+prueba matematicamente), la evaluacion experimental es opcional y puede
+limitarse a validar empiricamente el analisis teorico.
+\end{cajaNota}
+
+Cuando el capitulo experimental es necesario, su diseño no puede ser
+improvisado. \citet{wohlin2012experimentation} y, antes, \citet[metodologia
+seminal en ingenieria de software]{basili1986experimentation}, establecen
+que un experimento defendible requiere, como minimo:
+
+\begin{enumerate}
+  \item \textbf{Definicion del objetivo experimental}, ligado directamente a
+  las preguntas de investigacion del Bloque (a).
+  \item \textbf{Variables independientes y dependientes}, y las metricas
+  concretas con que se miden.
+  \item \textbf{Diseño experimental} (grupos de control, lineas base de
+  comparacion, aleatorizacion cuando aplique).
+  \item \textbf{Amenazas a la validez} (interna, externa, de constructo y de
+  conclusion), reportadas de forma explicita y no solo como formalidad.
+  \item \textbf{Analisis estadistico} apropiado al tipo de dato recolectado.
+\end{enumerate}
+
+Para experimentos de rendimiento de sistemas (tiempos de ejecucion, uso de
+memoria, escalabilidad), \citet{jain1991art} sigue siendo la referencia
+estandar sobre metodologia de medicion, caracterizacion de carga de trabajo y
+presentacion honesta de resultados: en particular, advierte contra reportar
+un unico numero (por ejemplo, un promedio) sin exponer variabilidad,
+condiciones del entorno de medicion ni supuestos de la carga usada.
+
+\begin{cajaAlerta}
+Una lista de baselines mal elegida invalida el capitulo entero. La linea
+base debe ser el mejor competidor razonable disponible para el mismo
+problema, no una version deliberadamente debil. Comparar solo contra una
+implementacion \emph{naive} propia, cuando existen alternativas publicadas
+del estado del arte, es una de las objeciones mas comunes en defensas de
+tesis de corte experimental.
+\end{cajaAlerta}
+
+\subsection{Resultados e interpretacion}
+
+Los resultados deben presentarse separados de su interpretacion: primero los
+datos (tablas, graficas, medidas de dispersion), luego el analisis de lo que
+significan en relacion con las hipotesis u objetivos. La \cref{tab:resumen}
+resume, a modo de referencia cruzada, que evidencia corresponde a cada tipo
+de contribucion.
+
+\begin{table}[h]
+\centering
+\small
+\rowcolors{2}{lightblue!25}{white}
+\begin{tabular}{p{3.4cm}p{4.1cm}p{4.1cm}}
+\toprule
+\rowcolor{blue!30}
+\textbf{Tipo de contribucion} & \textbf{Evidencia minima obligatoria} & \textbf{Evidencia adicional recomendada}\\
+\midrule
+Algoritmo & Prueba de correctitud + analisis de complejidad & Evaluacion empirica de rendimiento vs. baselines\\
+Teorema / resultado formal & Demostracion completa & Ejemplos ilustrativos, casos limite\\
+Modelo / arquitectura & Justificacion de supuestos + validacion cualitativa & Validacion cuantitativa contra datos reales\\
+Sistema / herramienta & Descripcion reproducible de la arquitectura & Estudio de caso, benchmark, evaluacion de usuarios\\
+Estudio empirico & Diseño experimental riguroso + analisis estadistico & Replicacion, analisis de amenazas a la validez\\
+\bottomrule
+\end{tabular}
+\caption{Correspondencia entre tipo de contribucion y evidencia exigible.}
+\label{tab:resumen}
+\end{table}
+
+% ============================================================
+\section{Bloque (d): Conclusion}
+% ============================================================
+
+El cierre de la tesis no es un resumen mecanico: es el lugar donde se cierra
+el argumento abierto en la Introduccion. \citet{phillips2010phd} señalan que
+los comites evaluadores prestan especial atencion a que la conclusion
+responda, de forma explicita, a cada objetivo o pregunta planteada al inicio;
+dejar un objetivo sin respuesta clara --- incluso si la respuesta es
+negativa o parcial --- es motivo frecuente de observaciones.
+
+\subsection{Sintesis de la contribucion}
+
+Se recapitula, en un parrafo, que se propuso, que se hizo y que se
+demostro, evitando reintroducir informacion nueva. Debe leerse como el
+cierre logico de la promesa hecha en la Seccion~2.3.
+
+\subsection{Limitaciones}
+
+Toda contribucion tiene fronteras. Declarar limitaciones no debilita la
+tesis: la fortalece, porque demuestra que el autor entiende exactamente el
+alcance de lo demostrado \citep{booth2016craft}. Las limitaciones deben
+distinguirse de trabajos futuros: una limitacion es algo que el trabajo
+\emph{actual} no cubre por diseño o por restriccion; el trabajo futuro es
+una direccion que otros (o el mismo autor) podrian seguir despues.
+
+\subsection{Trabajo futuro e implicancias}
+
+Se identifican extensiones razonables, abiertas por los propios resultados o
+por las limitaciones reconocidas. Cuando corresponda, tambien se discuten
+implicancias practicas o teoricas mas amplias del hallazgo, conectando de
+vuelta con la relevancia planteada en la Introduccion --- cerrando asi el
+ciclo argumentativo completo de la tesis.
+
+% ============================================================
+\section{Consideraciones transversales de forma}
+% ============================================================
+
+Ademas del contenido, la forma en que se escribe cada bloque afecta su
+credibilidad. \citet{zobel2014writing} y \citet{knuth1989mathematical}
+coinciden en un conjunto reducido de principios que aplican a los cuatro
+bloques por igual:
+
+\begin{itemize}
+  \item \textbf{Precision terminologica}: cada termino tecnico se define la
+  primera vez que se usa y se usa de forma consistente en adelante.
+  \item \textbf{Notacion unica}: un mismo simbolo no debe significar dos
+  cosas distintas en capitulos distintos.
+  \item \textbf{Verificabilidad}: cualquier afirmacion cuantitativa debe
+  poder rastrearse hasta un dato, una demostracion o una cita.
+  \item \textbf{Progresion logica}: cada seccion debe poder justificar, en
+  una oracion, por que aparece despues de la anterior y antes de la
+  siguiente.
+\end{itemize}
+
+\begin{cajaEjemplo}[: prueba de coherencia entre bloques]
+Un ejercicio util antes de entregar la tesis es escribir, en una sola
+oracion por bloque, la funcion que cumple: (a) ``expongo que X es un
+problema no resuelto y me propongo lograr Y''; (b) ``explico lo necesario
+para entender Y, y muestro que nadie lo ha logrado bajo las condiciones que
+me propongo''; (c) ``presento Z y demuestro/mido que Z logra Y''; (d)
+``confirmo que Z logro Y, dentro de los limites L, y sugiero W como
+siguiente paso''. Si estas cuatro oraciones no encajan entre si, hay un
+problema estructural que ninguna cantidad de redaccion cuidadosa en el
+detalle podra ocultar ante un comite atento.
+\end{cajaEjemplo}
+
+% ============================================================
+\section{Plantilla esqueleto de referencia}
+% ============================================================
+
+La siguiente estructura es un ejemplo de como los cuatro bloques
+funcionales suelen materializarse en capitulos; los nombres son
+intercambiables y pueden fusionarse o dividirse segun el programa de
+posgrado o pregrado correspondiente.
+
+\begin{cajaBuenaPractica}[: esqueleto orientativo]
+\begin{enumerate}
+  \item \textbf{Introduccion} --- contexto, problema, objetivos/hipotesis,
+  alcance. \hfill\textit{(Bloque a)}
+  \item \textbf{Fundamentos teoricos} --- definiciones, notacion, resultados
+  previos usados como base. \hfill\textit{(Bloque b, parte teorica)}
+  \item \textbf{Estado del arte} --- trabajos relacionados y brecha
+  identificada. \hfill\textit{(Bloque b, parte comparativa)}
+  \item \textbf{Contribucion propuesta} --- algoritmo, modelo, teorema o
+  sistema, con su justificacion formal. \hfill\textit{(Bloque c, parte
+  formal)}
+  \item \textbf{Diseño experimental y resultados} --- \emph{solo si aplica
+  segun la \cref{tab:resumen}}. \hfill\textit{(Bloque c, parte empirica)}
+  \item \textbf{Conclusiones} --- sintesis, limitaciones, trabajo futuro.
+  \hfill\textit{(Bloque d)}
+\end{enumerate}
+\end{cajaBuenaPractica}
+
+Finalmente, conviene recordar la advertencia de \citet{wing2006computational}
+sobre el pensamiento computacional: una tesis en esta disciplina no solo
+resuelve un problema puntual, sino que aporta una forma reutilizable de
+pensar sobre una clase de problemas. Mantener esa aspiracion presente en los
+cuatro bloques --- y no solo en la introduccion --- es lo que distingue una
+tesis solida de un reporte tecnico extenso.
+
+\clearpage
+\printbibliography
+
+\end{document}
