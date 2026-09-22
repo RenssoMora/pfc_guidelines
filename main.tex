@@ -2,8 +2,8 @@
 \usepackage{estilo}
 \addbibresource{referencias.bib}
 
-\title{\LARGE\bfseries\color{tituloColor} Guia general para la redaccion de una tesis\\ en Ciencias de la Computacion}
-\author{Plantilla conceptual --- no ligada a una nomenclatura fija de capitulos}
+\title{\LARGE\bfseries\color{tituloColor} Guia general para la redaccion de una tesis\\ del área de Computacion}
+\author{Departamento de Computación\\}
 \date{}
 
 \begin{document}
@@ -25,15 +25,16 @@ no es imponer una estructura rigida sino asegurar que, sin importar como se
 titulen las secciones, la \emph{esencia} de cada funcion este presente.
 \end{abstract}
 
+\newpage
 \tableofcontents
+\newpage
 
 % ============================================================
 \section{Como leer y usar este molde}
 % ============================================================
 
 Una tesis de computacion no se organiza por convencion sino porque cada parte
-cumple un rol argumentativo especifico. \citet{zobel2014writing} insiste en
-que escribir en computacion es, ante todo, \emph{construir un argumento
+cumple un rol argumentativo especifico. \citet{zobel2014writing} declara que escribir en computacion es, ante todo, \emph{construir un argumento
 verificable}: cada afirmacion debe apoyarse en evidencia, ya sea una
 demostracion, un experimento o una referencia. Este documento traduce esa
 idea en cuatro bloques funcionales que pueden llamarse de muchas maneras
@@ -106,7 +107,7 @@ el planteamiento del problema, la revision preliminar de literatura que
 motiva ese planteamiento, el proposito del estudio y las preguntas o
 hipotesis que lo operacionalizan. Ninguno de estos componentes exige un
 nombre de seccion especifico, pero los cuatro deben poder señalarse con el
-dedo en algun lugar del documento.
+dedo en algun lugar del documento. 
 
 \subsection{Contextualizacion y planteamiento del problema}
 
@@ -119,7 +120,19 @@ correcta o segura. Esta tension es lo que en la jerga de investigacion se
 llama la \textbf{brecha} (\emph{gap}); situarla aqui evita que aparezca
 recien en el capitulo de estado del arte, donde ya seria tardio.
 
+Aquí es necesario resaltar que el problema rerpresenta desafios, por ejemplo
+en el caso de un algoritmo es aquello que le impide llegar a cumplir su objetivo.
+
+\begin{cajaAlerta}
+Un error comun es confundir el problema computacional con el objetivo de la tesis: 
+``el problema'' no es el algoritmo que se propone, ni el teorema que se prueba, etc.
+\end{cajaAlerta}
+
 \subsection{Objetivos, preguntas de investigacion e hipotesis}
+
+El objetivo de una tesis es la promesa que se hace al lector. Dependiendo
+del área de investigación ese objetivo se relaciona con un algoritmo, 
+un teorema, un modelo, una solución, etc. 
 
 Todo objetivo debe ser verificable por el propio diseño de la contribucion
 que se presentara mas adelante: si el objetivo es ``diseñar un algoritmo mas
@@ -128,14 +141,23 @@ eficiente'', el bloque de evidencia debera demostrar esa eficiencia; si es
 de investigacion, esta seccion puede articularse como:
 
 \begin{itemize}
-  \item \textbf{Objetivo general y objetivos especificos}, tipico en trabajos
-  de diseño o construccion de sistemas y algoritmos.
+  
+  \item \textbf{Hipotesis formales}, cuando el trabajo es de naturaleza
+  cuantitativa o experimental y se someteran a prueba estadistica.
   \item \textbf{Preguntas de investigacion} (\emph{research questions}),
   frecuentes en estudios empiricos de ingenieria de software, siguiendo el
   patron de formulacion que describen \citet{wohlin2012experimentation}.
-  \item \textbf{Hipotesis formales}, cuando el trabajo es de naturaleza
-  cuantitativa o experimental y se someteran a prueba estadistica.
+  \item \textbf{Objetivo general y objetivos especificos}, tipico en trabajos
+  de diseño o construccion de sistemas y algoritmos.
+  
 \end{itemize}
+
+Note que dependiendo del área y del matiz del trabajo, en algunas tesis se 
+presenta de manera formal las hipótesis, al igual que las preguntas de investigación, mientras que en otras se
+o algunas veces se encuentran de manera más informal dentro de los párrafos de la introducción,
+lo que si nunca puede faltar y quedar resaltado son los objetivos de la investigación.
+
+
 
 \begin{cajaAlerta}
 Un objetivo que no puede fallar no es un objetivo cientifico. Si no existe
@@ -328,11 +350,11 @@ de contribucion.
 \begin{table}[h]
 \centering
 \small
-\rowcolors{2}{lightblue!25}{white}
-\begin{tabular}{p{3.4cm}p{4.1cm}p{4.1cm}}
+\rowcolors{2}{tablaFondo}{white}
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{4.1cm}}
 \toprule
-\rowcolor{blue!30}
-\textbf{Tipo de contribucion} & \textbf{Evidencia minima obligatoria} & \textbf{Evidencia adicional recomendada}\\
+\rowcolor{tablaCabecera}
+\cabeceraTabla{Tipo de contribucion} & \cabeceraTabla{Evidencia minima obligatoria} & \cabeceraTabla{Evidencia adicional recomendada}\\
 \midrule
 Algoritmo & Prueba de correctitud + analisis de complejidad & Evaluacion empirica de rendimiento vs. baselines\\
 Teorema / resultado formal & Demostracion completa & Ejemplos ilustrativos, casos limite\\

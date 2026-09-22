@@ -55,6 +55,11 @@
 
 \newcommand{\rojo}[1]{\textcolor{red!70!black}{#1}}
 
+% Colores de tabla alineados con el recuadro "Nota metodologica"
+\colorlet{tablaFondo}{lightblue!35}
+\colorlet{tablaCabecera}{bordeNota}
+\newcommand{\cabeceraTabla}[1]{\textcolor{white}{\textbf{#1}}}
+
 % ------------------------------------------------------------
 % 4. Hipervinculos
 % ------------------------------------------------------------
@@ -95,31 +100,31 @@
 
 \newtcolorbox{cajaNota}[1][]{%
   enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
-  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  fonttitle=\bfseries, coltitle=white, boxrule=0.5pt, arc=1.5mm,
   title={Nota metodologica#1}
 }
 
 \newtcolorbox{cajaDefinicion}[1][]{%
-  enhanced, breakable, colback=purple!12, colframe=bordeDef,
-  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
+  fonttitle=\bfseries, coltitle=white, boxrule=0.5pt, arc=1.5mm,
   title={Definicion#1}
 }
 
 \newtcolorbox{cajaAlerta}[1][]{%
-  enhanced, breakable, colback=red!18, colframe=bordeAlerta,
-  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
+  fonttitle=\bfseries, coltitle=white, boxrule=0.5pt, arc=1.5mm,
   title={Error frecuente#1}
 }
 
 \newtcolorbox{cajaEjemplo}[1][]{%
-  enhanced, breakable, colback=orange!30, colframe=bordeEjemplo,
-  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
+  fonttitle=\bfseries, coltitle=white, boxrule=0.5pt, arc=1.5mm,
   title={Ejemplo#1}
 }
 
 \newtcolorbox{cajaBuenaPractica}[1][]{%
-  enhanced, breakable, colback=green!20, colframe=bordeBuenaPractica,
-  fonttitle=\bfseries, coltitle=black, boxrule=0.5pt, arc=1.5mm,
+  enhanced, breakable, colback=lightblue!35, colframe=bordeNota,
+  fonttitle=\bfseries, coltitle=white, boxrule=0.5pt, arc=1.5mm,
   title={Buena practica#1}
 }
 
@@ -135,6 +140,7 @@
   sorting=nyt,
   maxcitenames=2,
   giveninits=true,
+  uniquename=init,
   natbib=true
 ]{biblatex}
 
