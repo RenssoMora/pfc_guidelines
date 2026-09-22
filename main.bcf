@@ -2374,27 +2374,26 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">referencias.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">booth2016craft</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">zobel2014writing</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">booth2016craft</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">creswell2018research</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">booth2016craft</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">wohlin2012experimentation</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">zobel2014writing</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">denning1989computing</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">lamport1995write</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">kitchenham2007guidelines</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">kuhn1962structure</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">zobel2014writing</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">lamport1995write</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">wohlin2012experimentation</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">basili1986experimentation</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">jain1991art</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">phillips2010phd</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">booth2016craft</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">zobel2014writing</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">knuth1989mathematical</bcf:citekey>
-    <bcf:citekey order="21" intorder="1">wing2006computational</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">zobel2014writing</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">booth2016craft</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">creswell2018research</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">booth2016craft</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">wohlin2012experimentation</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">zobel2014writing</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">denning1989computing</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">lamport1995write</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">kitchenham2007guidelines</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">kuhn1962structure</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">zobel2014writing</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">lamport1995write</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">wohlin2012experimentation</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">basili1986experimentation</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">jain1991art</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">phillips2010phd</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">booth2016craft</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">zobel2014writing</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">knuth1989mathematical</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">wing2006computational</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

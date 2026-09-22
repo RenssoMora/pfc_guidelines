@@ -2,27 +2,33 @@
 \usepackage{estilo}
 \addbibresource{referencias.bib}
 
-\title{\LARGE\bfseries\color{tituloColor} Guia general para la redaccion de una tesis\\ del área de Computacion}
-\author{Departamento de Computación\\}
-\date{}
+
+
+
+
+
+
+\title{\LARGE\bfseries\color{tituloColor} Guia general y recomendaciones para la redaccion de una tesis  del área de Computacion}
+\author{Departamento de Computacion-UTEC\\}
+\date{\today}
 
 \begin{document}
 \maketitle
 
+\vspace{5cm}
+
 \begin{abstract}
 \noindent
-Este documento no es una tesis: es un \emph{molde argumentativo}, un ensayo que
-explica que debe \textbf{existir} dentro de una tesis de Ciencias de la
+Este documento presenta un \emph{molde argumentativo} que
+explica que debe \textbf{existir} dentro de una tesis de Ciencia de la
 Computacion para que esta sea correcta, autocontenida y defendible, con
-independencia de los nombres que finalmente reciban sus capitulos. La tesis se
-entiende aqui como lo describen \citet{booth2016craft}: una respuesta
-justificada a una pregunta que le importa a una comunidad. Sobre esa base se
-identifican cuatro funciones que todo trabajo de investigacion en computacion
-debe satisfacer --- situar el problema, sostenerse a si mismo con la teoria
+independencia de los nombres que finalmente reciban sus capitulos. Sobre 
+esa base se identifican cuatro funciones que todo trabajo de investigacion 
+en computacion debe satisfacer: situar el problema, sostenerse a si mismo con la teoria
 necesaria, distinguirse de lo ya hecho, y ofrecer una contribucion con
-evidencia de que funciona --- y se cierra con la sintesis final. El objetivo
-no es imponer una estructura rigida sino asegurar que, sin importar como se
-titulen las secciones, la \emph{esencia} de cada funcion este presente.
+evidencia, análisis y discusión, para finalemente terminar con la sintesis del
+estudio realizado. El objetivo no es imponer una estructura rigida sino asegurar que, 
+sin importar como se titulen las secciones, la \emph{esencia} de cada funcion este presente.
 \end{abstract}
 
 \newpage
@@ -30,7 +36,7 @@ titulen las secciones, la \emph{esencia} de cada funcion este presente.
 \newpage
 
 % ============================================================
-\section{Como leer y usar este molde}
+\section{Introducción}
 % ============================================================
 
 Una tesis de computacion no se organiza por convencion sino porque cada parte
@@ -40,16 +46,16 @@ demostracion, un experimento o una referencia. Este documento traduce esa
 idea en cuatro bloques funcionales que pueden llamarse de muchas maneras
 (``Capitulo 1'', ``Introduccion'', ``Marco teorico'', ``Estado del arte'',
 ``Metodologia'', ``Resultados'', etc.) pero cuya \textbf{funcion} no es
-negociable.
-
-\begin{cajaNota}
-Este documento esta escrito como ensayo argumentativo, no como tabla de
-contenidos vacia. Cada bloque se explica indicando (i) que problema
-resuelve dentro de la arquitectura global de la tesis, (ii) que elementos
-minimos debe contener, (iii) por que la literatura metodologica exige esos
-elementos, y (iv) cuando un elemento es opcional u obligatorio segun el tipo
-de contribucion (algoritmo, modelo formal, sistema, estudio empirico).
-\end{cajaNota}
+negociable. En general el documento de tesis tiene las siguientes caracteristicas: i) explicativa, 
+ii) autocontenida, iii) replicable, iv) verificable. Para garantizar que cumpla con estas caracteristicas
+es necesario que cierto contenido, la escencia de ellos, se encuentre dentro del documento, sin importar 
+el nombre que se le de a cada seccion. Ahora bien, dada el área de estudios, existen ciertas
+libertades que se dan en cuanto a la ubicación donde se encuentra ese contenido, sin embargo, 
+hay una estructura lógica que se debe seguir tomando en cuenta que el documento de tesis
+tiene forma de ensayo discurso. Por ende como todo discurso tiene introducción, desarrollo y conlusión.
+La tesis también debe seguir esa estructura. No obstante, la disposición de la información
+puede variar según el tipo de contribución que se haga, el área de investigación y el tipo de tesis 
+(pregrado, maestría, doctorado), y finalmente el propio estilo del autor. 
 
 La \cref{fig:pipeline} resume el flujo. Notese que las flechas no son solo de
 avance: una tesis madura revisa constantemente sus primeros bloques a la luz
@@ -95,8 +101,15 @@ nombres de los capitulos pueden variar; las funciones (a)--(d) no.}
 \label{fig:pipeline}
 \end{figure}
 
+Este documento esta escrito como ensayo argumentativo, no como tabla de
+contenidos vacia. Cada bloque se explica indicando (i) que problema
+resuelve dentro de la arquitectura global de la tesis, (ii) que elementos
+minimos debe contener, (iii) por que la literatura metodologica exige esos
+elementos, y (iv) cuando un elemento es opcional u obligatorio segun el tipo
+de contribucion (algoritmo, modelo formal, sistema, estudio empirico).
+
 % ============================================================
-\section{Bloque (a): Introduccion --- situar el problema}
+\section{Bloque (a): Introduccion}
 % ============================================================
 
 La primera funcion de la tesis es \textbf{situar al lector}: por que este
@@ -108,6 +121,7 @@ motiva ese planteamiento, el proposito del estudio y las preguntas o
 hipotesis que lo operacionalizan. Ninguno de estos componentes exige un
 nombre de seccion especifico, pero los cuatro deben poder señalarse con el
 dedo en algun lugar del documento. 
+
 
 \subsection{Contextualizacion y planteamiento del problema}
 
@@ -168,6 +182,24 @@ debe ser \rojo{falsable o refutable en la practica}, no solo plausible en el
 discurso.
 \end{cajaAlerta}
 
+En la Figura~\ref{fig:intro} se muestra un ejemplo de como se puede organizar 
+la introducción de una tesis, note que el formato usualmente se ve como si fuera
+una especie de embudo que va desde lo general a lo particular, es decir, 
+desde el contexto hasta los objetivos de la investigación (estrategia Top Down).
+Una particularidad de este gráfico es que permite separar la problemática del 
+problema computacional. Esto es conveniente porque permite al lector entender 
+el contexto y la problemática que se quiere resolver para luego comprender los desafíos
+que la contribución propuesto debe superar para cumplir con los objetivos 
+de la investigación. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.99\linewidth]{intro.pdf}
+\caption{Formato sugerido para la introduccion de una tesis. 
+Los nombres de seccion son intercambiables.}
+\label{fig:intro}
+\end{figure}
+
 \subsection{Alcance, supuestos y aporte esperado}
 
 Cerrando el bloque, conviene anticipar brevemente en que consiste la
@@ -195,7 +227,7 @@ formales, notacion, modelos computacionales, estructuras de datos,
 resultados previos que se usaran como caja negra, o el marco estadistico
 necesario para interpretar los experimentos. \citet{denning1989computing}
 argumentan que la disciplina de la computacion se sostiene sobre tres
-paradigmas --- teoria, abstraccion (modelado) y diseño --- y que toda
+paradigmas, teoria, abstraccion (modelado) y diseño, y que toda
 contribucion puede describirse en terminos de al menos uno de ellos; esta
 seccion debe dar al lector las herramientas del paradigma que corresponda a
 la tesis.
@@ -232,26 +264,22 @@ criticamente} contra los objetivos planteados en el Bloque (a) para exponer
 la brecha que la tesis llena. \citet{kitchenham2007guidelines} formalizan
 este proceso mediante revisiones sistematicas de literatura, con criterios
 explicitos de busqueda, inclusion y exclusion; aun cuando una tesis no
-requiera una revision sistematica completa, adoptar su disciplina --- fuentes
-trazables, criterios explicitos, cobertura representativa del area --- da
+requiera una revision sistematica completa, adoptar su disciplina, fuentes
+trazables, criterios explicitos, cobertura representativa del area, da
 credibilidad a la afirmacion de novedad. \citet[cap.~2]{kuhn1962structure}
 recuerda ademas que el valor de una contribucion cientifica se mide en
 relacion con el paradigma vigente: una tesis no ataca al vacio, ataca las
-limitaciones concretas de soluciones concretas.
-
-\begin{cajaBuenaPractica}
-Organice la comparacion en una tabla o taxonomia (por ejemplo, por enfoque,
+limitaciones concretas de soluciones concretas. Una sugerencia es: 
+organice la comparacion en una tabla o taxonomia (por ejemplo, por enfoque,
 supuestos, complejidad, o resultados reportados) y ubique explicitamente su
 propia contribucion como una fila o celda adicional de esa misma tabla. Esto
 hace visible la brecha en lugar de solo describirla en prosa.
-\end{cajaBuenaPractica}
 
 \begin{cajaAlerta}
 Evite el ``estado del arte panoramico'': enumerar decenas de trabajos sin
-conectarlos con los objetivos de la tesis. Cada trabajo citado en esta seccion
-debe responder a una de dos preguntas: ?por que no resuelve el problema
-planteado en el Bloque (a)? o ?que herramienta metodologica le presta a esta
-tesis?
+conectarlos con los objetivos de la tesis. La justificación de la contribución
+respecto a lo que ya existe es la parte mas importante de este bloque; y no tiene formato
+de monografía cronológica, sino de comparativa critica. 
 \end{cajaAlerta}
 
 \subsection{La brecha como bisagra}
@@ -286,7 +314,7 @@ a esa afirmacion \citep{zobel2014writing}.
   pequeño para ser verificado de forma mecanica; esta estructura facilita
   enormemente la revision por el comite.
   \item \textbf{Modelo o arquitectura}: descripcion formal del modelo,
-  justificacion de cada supuesto, y --- cuando corresponda --- un argumento
+  justificacion de cada supuesto, y, cuando corresponda, un argumento
   de por que el modelo captura los aspectos relevantes del fenomeno.
   \item \textbf{Sistema o artefacto de software}: arquitectura, decisiones de
   diseño relevantes, y una descripcion suficiente para que el sistema sea
@@ -375,8 +403,8 @@ El cierre de la tesis no es un resumen mecanico: es el lugar donde se cierra
 el argumento abierto en la Introduccion. \citet{phillips2010phd} señalan que
 los comites evaluadores prestan especial atencion a que la conclusion
 responda, de forma explicita, a cada objetivo o pregunta planteada al inicio;
-dejar un objetivo sin respuesta clara --- incluso si la respuesta es
-negativa o parcial --- es motivo frecuente de observaciones.
+dejar un objetivo sin respuesta clara, incluso si la respuesta es
+negativa o parcial, es motivo frecuente de observaciones.
 
 \subsection{Sintesis de la contribucion}
 
@@ -398,7 +426,7 @@ una direccion que otros (o el mismo autor) podrian seguir despues.
 Se identifican extensiones razonables, abiertas por los propios resultados o
 por las limitaciones reconocidas. Cuando corresponda, tambien se discuten
 implicancias practicas o teoricas mas amplias del hallazgo, conectando de
-vuelta con la relevancia planteada en la Introduccion --- cerrando asi el
+vuelta con la relevancia planteada en la Introduccion, cerrando asi el
 ciclo argumentativo completo de la tesis.
 
 % ============================================================
@@ -422,17 +450,7 @@ bloques por igual:
   siguiente.
 \end{itemize}
 
-\begin{cajaEjemplo}[: prueba de coherencia entre bloques]
-Un ejercicio util antes de entregar la tesis es escribir, en una sola
-oracion por bloque, la funcion que cumple: (a) ``expongo que X es un
-problema no resuelto y me propongo lograr Y''; (b) ``explico lo necesario
-para entender Y, y muestro que nadie lo ha logrado bajo las condiciones que
-me propongo''; (c) ``presento Z y demuestro/mido que Z logra Y''; (d)
-``confirmo que Z logro Y, dentro de los limites L, y sugiero W como
-siguiente paso''. Si estas cuatro oraciones no encajan entre si, hay un
-problema estructural que ninguna cantidad de redaccion cuidadosa en el
-detalle podra ocultar ante un comite atento.
-\end{cajaEjemplo}
+
 
 % ============================================================
 \section{Plantilla esqueleto de referencia}
@@ -443,32 +461,64 @@ funcionales suelen materializarse en capitulos; los nombres son
 intercambiables y pueden fusionarse o dividirse segun el programa de
 posgrado o pregrado correspondiente.
 
-\begin{cajaBuenaPractica}[: esqueleto orientativo]
 \begin{enumerate}
-  \item \textbf{Introduccion} --- contexto, problema, objetivos/hipotesis,
-  alcance. \hfill\textit{(Bloque a)}
-  \item \textbf{Fundamentos teoricos} --- definiciones, notacion, resultados
-  previos usados como base. \hfill\textit{(Bloque b, parte teorica)}
-  \item \textbf{Estado del arte} --- trabajos relacionados y brecha
-  identificada. \hfill\textit{(Bloque b, parte comparativa)}
-  \item \textbf{Contribucion propuesta} --- algoritmo, modelo, teorema o
-  sistema, con su justificacion formal. \hfill\textit{(Bloque c, parte
+  \item \textbf{Introduccion}, contexto, problema, objetivos/hipotesis,
+  alcance. \textit{(Bloque a)}
+  \item \textbf{Fundamentos teoricos}, definiciones, notacion, resultados
+  previos usados como base. \textit{(Bloque b, parte teorica)}
+  \item \textbf{Estado del arte}, trabajos relacionados y brecha
+  identificada. \textit{(Bloque b, parte comparativa)}
+  \item \textbf{Contribucion propuesta}, algoritmo, modelo, teorema o
+  sistema, con su justificacion formal. \textit{(Bloque c, parte
   formal)}
-  \item \textbf{Diseño experimental y resultados} --- \emph{solo si aplica
-  segun la \cref{tab:resumen}}. \hfill\textit{(Bloque c, parte empirica)}
-  \item \textbf{Conclusiones} --- sintesis, limitaciones, trabajo futuro.
-  \hfill\textit{(Bloque d)}
+  \item \textbf{Diseño experimental y resultados}, \emph{solo si aplica
+  segun la \cref{tab:resumen}}. \textit{(Bloque c, parte empirica)}
+  \item \textbf{Conclusiones}, sintesis, limitaciones, trabajo futuro.
+  \textit{(Bloque d)}
+
 \end{enumerate}
-\end{cajaBuenaPractica}
+
+Aunque no aparece de forma explícita en la lista, es recomendable incluir 
+partes importantes como abstract o resumen, y bibliografía al final de la tesis. 
+En el caso del abstract, este debe ser un resumen de la tesis, que contenga el problema,
+los objetivos, la contribución y los resultados de la investigación. Y evidentemente, 
+la bibliografía debe contener todas las referencias citadas en la tesis. Aunque 
+puede parecer obvio, en algunos casos es necesario recordarlo.
+
+
+También es importante resaltar que la estructura de la tesis puede variar 
+dependiendo del tipo de investigación, el área de estudio y el nivel académico 
+(pregrado, maestría, doctorado). Por lo tanto, es importante que el autor adapte 
+esta guía a las necesidades específicas de su trabajo y siga las directrices 
+establecidas por su institución académica. Por ejemplo en algunas tesis de maestría, 
+el bloque de fundamentos y estado del arte puede fusionarse en un solo capítulo,
+mientras que en tesis de doctorado, estos bloques pueden ser más extensos y detallados, 
+inclusive en algunas tesis de doctorado, aparecen nuevos capítulos donde cada uno de ellos
+presenta un artículo publicado por el autor, o alguna estrategia detallada, 
+lo que hace que la tesis sea más extensa y detallada. En cualquier situación, sea cual 
+sea, el documento de tesis debe cumplir con las funciones esenciales de situar el problema,
+sostenerse a sí mismo con la teoría necesaria, distinguirse de lo ya hecho y
+ofrecer una contribución con evidencia de que funciona, cerrando con la síntesis final. 
+
+Note que muchas secciones, capítulos, no han sido detalladas en esta guía, 
+ya que la intención es que el autor de la tesis pueda adaptar la estructura de la tesis a 
+su propio estilo y necesidades. Por ejemploagradecimientos, apéndices, anexos, etc., son
+secciones que pueden ser incluidas en la tesis según el criterio del autor y las normas de 
+la institución académica. 
+
+Así mismo, ningún documento de tesis puede ser presentado sin el visto bueno del 
+asesor de tesis, quien es el encargado de guiar al estudiante en la redacción de su 
+tesis, asegurando que cumpla con los estándares académicos y científicos requeridos por la institución.  
+
 
 Finalmente, conviene recordar la advertencia de \citet{wing2006computational}
 sobre el pensamiento computacional: una tesis en esta disciplina no solo
 resuelve un problema puntual, sino que aporta una forma reutilizable de
 pensar sobre una clase de problemas. Mantener esa aspiracion presente en los
-cuatro bloques --- y no solo en la introduccion --- es lo que distingue una
-tesis solida de un reporte tecnico extenso.
+cuatro bloques, y no solo en la introduccion, es lo que distingue una
+tesis solida de un reporte tecnico extenso. 
 
-\clearpage
+\newpage
 \printbibliography
 
 \end{document}

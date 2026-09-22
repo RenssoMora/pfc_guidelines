@@ -1,20 +1,20 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Como leer y usar este molde}{3}{section.1}%
-\contentsline {section}{\numberline {2}Bloque (a): Introduccion --- situar el problema}{3}{section.2}%
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Bloque (a): Introduccion}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Contextualizacion y planteamiento del problema}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Objetivos, preguntas de investigacion e hipotesis}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Alcance, supuestos y aporte esperado}{5}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Bloque (b): Fundamentos necesarios y justificacion frente al estado del arte}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Fundamentos teoricos (autocontencion)}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Estado del arte y justificacion frente a lo existente}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}La brecha como bisagra}{6}{subsection.3.3}%
+\contentsline {section}{\numberline {3}Bloque (b): Fundamentos necesarios y justificacion frente al estado del arte}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Fundamentos teoricos (autocontencion)}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Estado del arte y justificacion frente a lo existente}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}La brecha como bisagra}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Bloque (c): Presentacion de la contribucion y evidencia}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Presentacion formal de la contribucion}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Diseño experimental (capitulo condicional)}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Resultados e interpretacion}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}Diseño experimental (capitulo condicional)}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Resultados e interpretacion}{9}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Bloque (d): Conclusion}{9}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Sintesis de la contribucion}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Limitaciones}{9}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Trabajo futuro e implicancias}{9}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Consideraciones transversales de forma}{9}{section.6}%
+\contentsline {subsection}{\numberline {5.2}Limitaciones}{10}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Trabajo futuro e implicancias}{10}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Consideraciones transversales de forma}{10}{section.6}%
 \contentsline {section}{\numberline {7}Plantilla esqueleto de referencia}{10}{section.7}%
